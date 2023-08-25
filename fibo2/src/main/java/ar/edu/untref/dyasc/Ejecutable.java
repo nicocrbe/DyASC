@@ -13,7 +13,12 @@ public class Ejecutable {
            serie = SerieFibonacci.fibonacciHorizontal(n);
        }else if(args[0].contains("-o") && args.length == 2){
            n = Integer.parseInt(args[1]);
-           String direccion = args[0].split("=")[1];
+           String[] parametros = args[0].split("=");
+           if(parametros.length != 2){
+               System.out.println("Opción no válida");
+               return;
+           }
+           String direccion = parametros[1];
            serie = SerieFibonacci.getFibonacciPorDireccion(n, serie, direccion);
        }else{
             System.out.println("Opción no válida");
