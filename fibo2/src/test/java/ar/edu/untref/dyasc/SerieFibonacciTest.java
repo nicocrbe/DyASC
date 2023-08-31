@@ -1,5 +1,7 @@
 package ar.edu.untref.dyasc;
 
+import ar.edu.untref.dyasc.services.SerieFibonacci;
+import ar.edu.untref.dyasc.utils.Constants;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -81,52 +83,52 @@ public class SerieFibonacciTest {
 
     @Test
     public void testGetFibonacciPorDireccion() {
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", "hd")).isEqualTo("");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", "hd")).isEqualTo(" 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", "hd")).isEqualTo(" 0 1");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", "hd")).isEqualTo(" 0 1 1");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", "hd")).isEqualTo(" 0 1 1 2");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", "hd")).isEqualTo(" 0 1 1 2 3");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", "hd")).isEqualTo(" 0 1 1 2 3 5");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", "hd")).isEqualTo(" 0 1 1 2 3 5 8");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", "hd")).isEqualTo(" 0 1 1 2 3 5 8 13");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", "hd")).isEqualTo(" 0 1 1 2 3 5 8 13 21");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", "hd")).isEqualTo(" 0 1 1 2 3 5 8 13 21 34");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", Constants.HORIZONTAL_DERECHA)).isEqualTo("");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1 2");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1 2 3");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1 2 3 5");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1 2 3 5 8");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1 2 3 5 8 13");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1 2 3 5 8 13 21");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", Constants.HORIZONTAL_DERECHA)).isEqualTo(" 0 1 1 2 3 5 8 13 21 34");
 
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", "vd")).isEqualTo("");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", "vd")).isEqualTo("0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", "vd")).isEqualTo("0\n1\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", "vd")).isEqualTo("0\n1\n1\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", "vd")).isEqualTo("0\n1\n1\n2\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", "vd")).isEqualTo("0\n1\n1\n2\n3\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", "vd")).isEqualTo("0\n1\n1\n2\n3\n5\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", "vd")).isEqualTo("0\n1\n1\n2\n3\n5\n8\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", "vd")).isEqualTo("0\n1\n1\n2\n3\n5\n8\n13\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", "vd")).isEqualTo("0\n1\n1\n2\n3\n5\n8\n13\n21\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", "vd")).isEqualTo("0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", Constants.VERTICAL_DERECHA)).isEqualTo("");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n2\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n2\n3\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n2\n3\n5\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n2\n3\n5\n8\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n2\n3\n5\n8\n13\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n2\n3\n5\n8\n13\n21\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", Constants.VERTICAL_DERECHA)).isEqualTo("0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n");
 
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", "hi")).isEqualTo("");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", "hi")).isEqualTo(" 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", "hi")).isEqualTo(" 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", "hi")).isEqualTo(" 1 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", "hi")).isEqualTo(" 2 1 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", "hi")).isEqualTo(" 3 2 1 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", "hi")).isEqualTo(" 5 3 2 1 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", "hi")).isEqualTo(" 8 5 3 2 1 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", "hi")).isEqualTo(" 13 8 5 3 2 1 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", "hi")).isEqualTo(" 21 13 8 5 3 2 1 1 0");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", "hi")).isEqualTo(" 34 21 13 8 5 3 2 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", Constants.HORIZONTAL_INVERSA)).isEqualTo("");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 2 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 3 2 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 5 3 2 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 8 5 3 2 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 13 8 5 3 2 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 21 13 8 5 3 2 1 1 0");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", Constants.HORIZONTAL_INVERSA)).isEqualTo(" 34 21 13 8 5 3 2 1 1 0");
 
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", "vi")).isEqualTo("");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", "vi")).isEqualTo("0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", "vi")).isEqualTo("1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", "vi")).isEqualTo("1\n1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", "vi")).isEqualTo("2\n1\n1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", "vi")).isEqualTo("3\n2\n1\n1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", "vi")).isEqualTo("5\n3\n2\n1\n1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", "vi")).isEqualTo("8\n5\n3\n2\n1\n1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", "vi")).isEqualTo("13\n8\n5\n3\n2\n1\n1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", "vi")).isEqualTo("21\n13\n8\n5\n3\n2\n1\n1\n0\n");
-        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", "vi")).isEqualTo("34\n21\n13\n8\n5\n3\n2\n1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(0, "", Constants.VERTICAL_INVERSA)).isEqualTo("");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(1, "", Constants.VERTICAL_INVERSA)).isEqualTo("0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(2, "", Constants.VERTICAL_INVERSA)).isEqualTo("1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(3, "", Constants.VERTICAL_INVERSA)).isEqualTo("1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(4, "", Constants.VERTICAL_INVERSA)).isEqualTo("2\n1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(5, "", Constants.VERTICAL_INVERSA)).isEqualTo("3\n2\n1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(6, "", Constants.VERTICAL_INVERSA)).isEqualTo("5\n3\n2\n1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(7, "", Constants.VERTICAL_INVERSA)).isEqualTo("8\n5\n3\n2\n1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(8, "", Constants.VERTICAL_INVERSA)).isEqualTo("13\n8\n5\n3\n2\n1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(9, "", Constants.VERTICAL_INVERSA)).isEqualTo("21\n13\n8\n5\n3\n2\n1\n1\n0\n");
+        Assertions.assertThat(SerieFibonacci.getFibonacciPorDireccion(10, "", Constants.VERTICAL_INVERSA)).isEqualTo("34\n21\n13\n8\n5\n3\n2\n1\n1\n0\n");
     }
 }

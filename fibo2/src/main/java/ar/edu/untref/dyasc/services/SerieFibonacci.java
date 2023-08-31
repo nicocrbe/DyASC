@@ -1,16 +1,7 @@
-package ar.edu.untref.dyasc;
- /*
- * Partiendo del ejercicio Fibonacci, copiarlo en otra carpeta llamada Fibo2 y a partir de eso realizar las modificaciones necesarias para soportar las siguientes opciones:
+package ar.edu.untref.dyasc.services;
 
-Orientación: horizontal (h) o vertical (v)
-Dirección: directa (d) o inversa (i)
-Si es especifica una opción no válida debe indicarse "Opción no válida".
+import ar.edu.untref.dyasc.utils.Constants;
 
-El programa puede invocarse sin la opción "-o" en cuyo caso el comportamiento debe ser por default hd.
-*
-* Ejemplo de ejecución:
-* java -jar fibo.jar -o=vd 5
-*/
 public class SerieFibonacci {
     public static int fibonacci(int n) {
         if (n <= 0) {
@@ -56,20 +47,20 @@ public class SerieFibonacci {
 
 	 public static String getFibonacciPorDireccion(int n, String serie, String direccion) {
 		 switch (direccion) {
-			 case "hd":
+			 case Constants.HORIZONTAL_DERECHA:
 				 serie = SerieFibonacci.fibonacciHorizontal(n);
 				 break;
-			 case "vd":
+			 case Constants.VERTICAL_DERECHA:
 				 serie = SerieFibonacci.fibonacciVertical(n);
 				 break;
-			 case "hi":
+			 case Constants.HORIZONTAL_INVERSA:
 				 serie = SerieFibonacci.fibonacciHorizontalInverso(n);
 				 break;
-			 case "vi":
+			 case Constants.VERTICAL_INVERSA:
 				 serie = SerieFibonacci.fibonacciVerticalInverso(n);
 				 break;
 			 default:
-				 System.out.println("Opción no válida");
+				 System.out.println(Constants.LOG_OPCION_INVALIDA);
 				 break;
 		 }
 		 return serie;
