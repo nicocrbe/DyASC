@@ -1,14 +1,26 @@
 package ar.edu.untref.dyasc.service;
 
 import ar.edu.untref.dyasc.models.Jugador;
+import ar.edu.untref.dyasc.models.Partido;
 
 public class PartidoService {
 
     private Jugador jugadorLocal;
     private Jugador jugadorVisitante;
-    public PartidoService(Jugador jugadorLocal, Jugador jugadorVisitante) {
+    private Partido partido;
+
+    public PartidoService(Jugador jugadorLocal, Jugador jugadorVisitante, Partido partido) {
         this.jugadorLocal = jugadorLocal;
         this.jugadorVisitante = jugadorVisitante;
+        this.partido = partido;
+    }
+
+    public Partido getPartido() {
+        return partido;
+    }
+
+    public void setPartido(Partido partido) {
+        this.partido = partido;
     }
 
     public Jugador getJugadorLocal() {
