@@ -18,6 +18,7 @@ public class PartidoServiceTest {
     public void setUp() {
         jugadorLocal = new Jugador("Juan");
         jugadorVisitante = new Jugador("Pedro");
+        partido = new Partido(jugadorLocal, jugadorVisitante);
         partidoService = new PartidoService(jugadorLocal, jugadorVisitante, partido);
     }
 
@@ -31,6 +32,12 @@ public class PartidoServiceTest {
     @Test
     public void testPartido() {
         Assertions.assertEquals(partido, partidoService.getPartido());
+    }
+
+    @Test
+    public void testSumarPuntoGameActualLocal(){
+        partidoService.sumarPuntoGameActualLocal();
+        Assertions.assertEquals("15", partidoService.getPartido().getPuntosGameActualLocal());
     }
 
 

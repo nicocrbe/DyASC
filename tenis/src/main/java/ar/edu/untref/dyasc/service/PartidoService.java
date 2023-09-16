@@ -38,6 +38,11 @@ public class PartidoService {
     public void setJugadorVisitante(Jugador jugadorVisitante) {
         this.jugadorVisitante = jugadorVisitante;
     }
+
+    public void sumarPuntoGameActualLocal() {
+        if(partido.getPuntosGameActualLocal().equals("0")){
+            partido.setPuntosGameActualLocal("15");
+    }
 /*
     * Conceptos básicos
 
@@ -71,4 +76,5 @@ public class PartidoService {
         No se puede escribir una nueva prueba hasta tanto en código esté debidamente refactorizado.
     * */
 
+}
 }
