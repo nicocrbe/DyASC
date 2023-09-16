@@ -1,8 +1,6 @@
 package ar.edu.untref.dyasc.models;
 
 public class Partido {
-    private Jugador jugadorLocal;
-    private Jugador jugadorVisitante;
     private int setsLocal;
     private int setsVisitante;
     private String puntosGameActualLocal;
@@ -33,9 +31,7 @@ public class Partido {
         this.ganoVisitante = ganoVisitante;
     }
 
-    public Partido(Jugador jugadorLocal, Jugador jugadorVisitante) {
-        this.jugadorLocal = jugadorLocal;
-        this.jugadorVisitante = jugadorVisitante;
+    public Partido() {
         this.setsLocal = 0;
         this.setsVisitante = 0;
         this.puntosGameActualLocal = "0";
@@ -68,22 +64,6 @@ public class Partido {
 
     public void setDeuce(boolean deuce) {
         this.deuce = deuce;
-    }
-
-    public Jugador getJugadorLocal() {
-        return jugadorLocal;
-    }
-
-    public void setJugadorLocal(Jugador jugadorLocal) {
-        this.jugadorLocal = jugadorLocal;
-    }
-
-    public Jugador getJugadorVisitante() {
-        return jugadorVisitante;
-    }
-
-    public void setJugadorVisitante(Jugador jugadorVisitante) {
-        this.jugadorVisitante = jugadorVisitante;
     }
 
     public int getSetsLocal() {

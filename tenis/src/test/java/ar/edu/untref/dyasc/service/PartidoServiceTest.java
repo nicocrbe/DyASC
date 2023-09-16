@@ -18,7 +18,7 @@ public class PartidoServiceTest {
     public void setUp() {
         jugadorLocal = new Jugador("Juan");
         jugadorVisitante = new Jugador("Pedro");
-        partido = new Partido(jugadorLocal, jugadorVisitante);
+        partido = new Partido();
         partidoService = new PartidoService(jugadorLocal, jugadorVisitante, partido);
     }
 
@@ -332,5 +332,45 @@ public class PartidoServiceTest {
         partidoService.sumarGameVisitante();
 
         Assertions.assertEquals(0, partidoService.getPartido().getSetsVisitante());
+    }
+
+    @Test
+    public void testSumarSetEnTieBreakLocal() {
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+
+        Assertions.assertEquals(1, partidoService.getPartido().getSetsLocal());
+    }
+
+    @Test
+    public void testSumarSetEnTieBreakVisitante() {
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        Assertions.assertEquals(1, partidoService.getPartido().getSetsVisitante());
     }
 }
