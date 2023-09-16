@@ -3,8 +3,8 @@ package ar.edu.untref.dyasc.models;
 public class Partido {
     private Jugador jugadorLocal;
     private Jugador jugadorVisitante;
-    private int scoreLocal;
-    private int scoreVisitante;
+    private int setsLocal;
+    private int setsVisitante;
     private String puntosGameActualLocal;
     private String puntosGameActualVisitante;
     private int cantidadGamesLocal;
@@ -13,8 +13,8 @@ public class Partido {
     public Partido(Jugador jugadorLocal, Jugador jugadorVisitante) {
         this.jugadorLocal = jugadorLocal;
         this.jugadorVisitante = jugadorVisitante;
-        this.scoreLocal = 0;
-        this.scoreVisitante = 0;
+        this.setsLocal = 0;
+        this.setsVisitante = 0;
         this.puntosGameActualLocal = "0";
         this.puntosGameActualVisitante = "0";
         this.cantidadGamesLocal = 0;
@@ -37,20 +37,20 @@ public class Partido {
         this.jugadorVisitante = jugadorVisitante;
     }
 
-    public int getScoreLocal() {
-        return scoreLocal;
+    public int getSetsLocal() {
+        return setsLocal;
     }
 
-    public void setScoreLocal(int scoreLocal) {
-        this.scoreLocal = scoreLocal;
+    public void setSetsLocal(int setsLocal) {
+        this.setsLocal = setsLocal;
     }
 
-    public int getScoreVisitante() {
-        return scoreVisitante;
+    public int getSetsVisitante() {
+        return setsVisitante;
     }
 
-    public void setScoreVisitante(int scoreVisitante) {
-        this.scoreVisitante = scoreVisitante;
+    public void setSetsVisitante(int setsVisitante) {
+        this.setsVisitante = setsVisitante;
     }
 
     public String getPuntosGameActualLocal() {
