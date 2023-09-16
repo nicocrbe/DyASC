@@ -145,4 +145,30 @@ public class PartidoServiceTest {
 
         Assertions.assertTrue(partidoService.getPartido().isGanoLocal());
     }
+
+    @Test
+    public void testGanarPartidoVisitante() {
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        Assertions.assertTrue(partidoService.getPartido().isGanoVisitante());
+    }
 }

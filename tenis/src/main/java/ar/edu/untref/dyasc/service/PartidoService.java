@@ -114,6 +114,9 @@ public class PartidoService {
             partido.setCantidadGamesLocal(0);
             partido.setCantidadGamesVisitante(0);
         }
+        if(partido.getSetsVisitante()==3){
+            partido.setGanoVisitante(true);
+        }
     }
 
 }
