@@ -42,6 +42,13 @@ public class PartidoService {
     public void sumarPuntoGameActualLocal() {
         if(partido.getPuntosGameActualLocal().equals("0")){
             partido.setPuntosGameActualLocal("15");
+        }else if(partido.getPuntosGameActualLocal().equals("15")){
+            partido.setPuntosGameActualLocal("30");
+        }else if(partido.getPuntosGameActualLocal().equals("30")){
+            partido.setPuntosGameActualLocal("40");
+        }else if(partido.getPuntosGameActualLocal().equals("40")){
+            partido.setPuntosGameActualLocal("0");
+        }
     }
 /*
     * Conceptos básicos
@@ -75,12 +82,10 @@ public class PartidoService {
         No se puede tener más de una prueba en estado fallido a la vez.
         No se puede escribir una nueva prueba hasta tanto en código esté debidamente refactorizado.
     * */
-
-}
-
     public void sumarPuntoGameActualVisitante() {
         if(partido.getPuntosGameActualVisitante().equals("0")){
-            partido.setPuntosGameActualVisitante("15");
-        }
+        partido.setPuntosGameActualVisitante("15");
+    }
+
     }
 }
