@@ -102,6 +102,9 @@ public class PartidoService {
             partido.setCantidadGamesLocal(0);
             partido.setCantidadGamesVisitante(0);
         }
+        if(partido.getSetsLocal()==3){
+            partido.setGanoLocal(true);
+        }
     }
 
     public void sumarGameVisitante() {

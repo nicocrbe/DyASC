@@ -10,6 +10,25 @@ public class Partido {
     private int cantidadGamesLocal;
     private int cantidadGamesVisitante;
 
+    private boolean ganoLocal;
+    private boolean ganoVisitante;
+
+    public boolean isGanoLocal() {
+        return ganoLocal;
+    }
+
+    public void setGanoLocal(boolean ganoLocal) {
+        this.ganoLocal = ganoLocal;
+    }
+
+    public boolean isGanoVisitante() {
+        return ganoVisitante;
+    }
+
+    public void setGanoVisitante(boolean ganoVisitante) {
+        this.ganoVisitante = ganoVisitante;
+    }
+
     public Partido(Jugador jugadorLocal, Jugador jugadorVisitante) {
         this.jugadorLocal = jugadorLocal;
         this.jugadorVisitante = jugadorVisitante;
@@ -19,6 +38,8 @@ public class Partido {
         this.puntosGameActualVisitante = "0";
         this.cantidadGamesLocal = 0;
         this.cantidadGamesVisitante = 0;
+        this.ganoLocal = false;
+        this.ganoVisitante = false;
     }
 
     public Jugador getJugadorLocal() {
