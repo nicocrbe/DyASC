@@ -373,4 +373,56 @@ public class PartidoServiceTest {
 
         Assertions.assertEquals(1, partidoService.getPartido().getSetsVisitante());
     }
+
+    @Test
+    public void testObtenerJugadorLocalSiEsGanador() {
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+
+        Assertions.assertEquals("Juan", partidoService.obtenerGanador().getNombre());
+    }
+
+    @Test
+    public void testObtenerJugadorVisitanteSiEsGanador() {
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        Assertions.assertEquals("Pedro", partidoService.obtenerGanador().getNombre());
+    }
 }

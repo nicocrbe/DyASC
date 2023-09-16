@@ -121,4 +121,14 @@ public class PartidoService {
         }
     }
 
+    public Jugador obtenerGanador(){
+        if(partido.isGanoLocal()){
+            return jugadorLocal;
+        }else if(partido.isGanoVisitante()){
+            return jugadorVisitante;
+        }else{
+            return null;
+        }
+    }
+
 }
