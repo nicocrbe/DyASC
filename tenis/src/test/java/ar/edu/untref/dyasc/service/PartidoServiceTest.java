@@ -58,5 +58,17 @@ public class PartidoServiceTest {
         Assertions.assertEquals("0", partidoService.getPartido().getPuntosGameActualLocal());
     }
 
+    @Test
+    public void testSumarPuntoGameActualVisitanteDeCeroAGame(){
+        partidoService.sumarPuntoGameActualVisitante();
+        Assertions.assertEquals("15", partidoService.getPartido().getPuntosGameActualVisitante());
+        partidoService.sumarPuntoGameActualVisitante();
+        Assertions.assertEquals("30", partidoService.getPartido().getPuntosGameActualVisitante());
+        partidoService.sumarPuntoGameActualVisitante();
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
+        partidoService.sumarPuntoGameActualVisitante();
+        Assertions.assertEquals("0", partidoService.getPartido().getPuntosGameActualVisitante());
+    }
+
 
 }

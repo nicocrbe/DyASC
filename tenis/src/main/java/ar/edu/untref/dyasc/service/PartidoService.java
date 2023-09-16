@@ -84,7 +84,13 @@ public class PartidoService {
     * */
     public void sumarPuntoGameActualVisitante() {
         if(partido.getPuntosGameActualVisitante().equals("0")){
-        partido.setPuntosGameActualVisitante("15");
+            partido.setPuntosGameActualVisitante("15");
+        }else if(partido.getPuntosGameActualVisitante().equals("15")){
+            partido.setPuntosGameActualVisitante("30");
+        }else if(partido.getPuntosGameActualVisitante().equals("30")){
+            partido.setPuntosGameActualVisitante("40");
+        }else if(partido.getPuntosGameActualVisitante().equals("40")){
+            partido.setPuntosGameActualVisitante("0");
     }
 
     }
