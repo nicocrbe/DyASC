@@ -94,4 +94,8 @@ public class PartidoService {
     }
 
     }
+
+    public void sumarGameLocal() {
+        partido.setCantidadGamesLocal(partido.getCantidadGamesLocal() + 1);
+    }
 }
