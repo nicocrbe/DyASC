@@ -13,6 +13,8 @@ public class Partido {
     private boolean ganoLocal;
     private boolean ganoVisitante;
 
+    private boolean deuce;
+
     public boolean isGanoLocal() {
         return ganoLocal;
     }
@@ -40,6 +42,14 @@ public class Partido {
         this.cantidadGamesVisitante = 0;
         this.ganoLocal = false;
         this.ganoVisitante = false;
+    }
+
+    public boolean isDeuce() {
+        return deuce;
+    }
+
+    public void setDeuce(boolean deuce) {
+        this.deuce = deuce;
     }
 
     public Jugador getJugadorLocal() {

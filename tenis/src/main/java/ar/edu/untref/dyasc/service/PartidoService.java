@@ -45,6 +45,9 @@ public class PartidoService {
         }else if(partido.getPuntosGameActualLocal().equals("15")){
             partido.setPuntosGameActualLocal("30");
         }else if(partido.getPuntosGameActualLocal().equals("30")){
+            if(partido.getPuntosGameActualVisitante().equals("40")){
+                partido.setDeuce(true);
+            }
             partido.setPuntosGameActualLocal("40");
         }else if(partido.getPuntosGameActualLocal().equals("40")){
             partido.setPuntosGameActualLocal("0");
@@ -88,6 +91,9 @@ public class PartidoService {
         }else if(partido.getPuntosGameActualVisitante().equals("15")){
             partido.setPuntosGameActualVisitante("30");
         }else if(partido.getPuntosGameActualVisitante().equals("30")){
+            if(partido.getPuntosGameActualLocal().equals("40")){
+                partido.setDeuce(true);
+            }
             partido.setPuntosGameActualVisitante("40");
         }else if(partido.getPuntosGameActualVisitante().equals("40")){
             partido.setPuntosGameActualVisitante("0");

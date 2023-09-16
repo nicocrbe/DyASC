@@ -171,4 +171,32 @@ public class PartidoServiceTest {
 
         Assertions.assertTrue(partidoService.getPartido().isGanoVisitante());
     }
+
+    @Test
+    public void testDeuceAlSumarPuntoVisitante() {
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
+        Assertions.assertTrue(partidoService.getPartido().isDeuce());
+    }
+
+    @Test
+    public void testDeuceAlSumarPuntoLocal() {
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
+        Assertions.assertTrue(partidoService.getPartido().isDeuce());
+    }
 }
