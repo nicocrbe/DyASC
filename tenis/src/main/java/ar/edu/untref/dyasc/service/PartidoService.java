@@ -106,6 +106,11 @@ public class PartidoService {
 
     public void sumarGameVisitante() {
         partido.setCantidadGamesVisitante(partido.getCantidadGamesVisitante() + 1);
+        if (partido.getCantidadGamesVisitante() == 6) {
+            partido.setSetsVisitante(partido.getSetsVisitante() + 1);
+            partido.setCantidadGamesLocal(0);
+            partido.setCantidadGamesVisitante(0);
+        }
     }
 
 }

@@ -109,5 +109,16 @@ public class PartidoServiceTest {
         Assertions.assertEquals(1, partidoService.getPartido().getSetsLocal());
     }
 
+    @Test
+    public void testGanarSetVisitante(){
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        Assertions.assertEquals(1, partidoService.getPartido().getSetsVisitante());
+    }
+
 
 }
