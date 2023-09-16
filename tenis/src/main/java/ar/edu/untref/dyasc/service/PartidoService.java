@@ -53,11 +53,13 @@ public class PartidoService {
             if(partido.isDeuce()){
                 partido.setVentajaLocal(true);
                 partido.setDeuce(false);
+            }else if(partido.isVentajaVisitante()){
+                partido.setDeuce(true);
+                partido.setVentajaVisitante(false);
             }else{
                 sumarGameLocal();
                 partido.setPuntosGameActualLocal("0");
             }
-
         }
     }
     public void sumarPuntoGameActualVisitante() {

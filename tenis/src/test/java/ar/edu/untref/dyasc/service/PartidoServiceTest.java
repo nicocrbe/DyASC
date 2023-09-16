@@ -80,7 +80,6 @@ public class PartidoServiceTest {
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
         partidoService.sumarPuntoGameActualLocal();
         Assertions.assertEquals("0", partidoService.getPartido().getPuntosGameActualLocal());
-        partidoService.sumarGameLocal();
         Assertions.assertEquals(1, partidoService.getPartido().getCantidadGamesLocal());
     }
 
@@ -94,7 +93,6 @@ public class PartidoServiceTest {
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
         partidoService.sumarPuntoGameActualVisitante();
         Assertions.assertEquals("0", partidoService.getPartido().getPuntosGameActualVisitante());
-        partidoService.sumarGameVisitante();
         Assertions.assertEquals(1, partidoService.getPartido().getCantidadGamesVisitante());
     }
 
@@ -244,6 +242,23 @@ public class PartidoServiceTest {
         partidoService.sumarPuntoGameActualVisitante();
 
         Assertions.assertFalse(partidoService.getPartido().isVentajaLocal());
+        Assertions.assertTrue(partidoService.getPartido().isDeuce());
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
+    }
+
+    @Test
+    public void testEstandoEnVentajaVisitanteQuitarVentaja(){
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualLocal();
+
+        Assertions.assertFalse(partidoService.getPartido().isVentajaVisitante());
         Assertions.assertTrue(partidoService.getPartido().isDeuce());
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
