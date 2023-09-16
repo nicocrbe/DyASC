@@ -111,7 +111,7 @@ public class PartidoService {
         partido.setDeuce(false);
 
         partido.setCantidadGamesVisitante(partido.getCantidadGamesVisitante() + 1);
-        if (partido.getCantidadGamesVisitante() == 6) {
+        if (partido.getCantidadGamesVisitante() >= 6 && (partido.getCantidadGamesVisitante() - partido.getCantidadGamesLocal()) >= 2) {
             partido.setSetsVisitante(partido.getSetsVisitante() + 1);
             partido.setCantidadGamesLocal(0);
             partido.setCantidadGamesVisitante(0);

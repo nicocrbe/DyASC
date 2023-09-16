@@ -314,4 +314,23 @@ public class PartidoServiceTest {
 
         Assertions.assertEquals(0, partidoService.getPartido().getSetsLocal());
     }
+
+    @Test
+    public void testNoSumarSetEnTieBreakVisitante(){
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+        partidoService.sumarGameLocal();
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameVisitante();
+
+        partidoService.sumarGameVisitante();
+
+        Assertions.assertEquals(0, partidoService.getPartido().getSetsVisitante());
+    }
 }
