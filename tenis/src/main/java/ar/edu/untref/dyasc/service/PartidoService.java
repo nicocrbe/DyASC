@@ -88,6 +88,11 @@ public class PartidoService {
     }
 
     public void sumarGameLocal() {
+        partido.setVentajaLocal(false);
+        partido.setPuntosGameActualLocal("0");
+        partido.setPuntosGameActualVisitante("0");
+        partido.setDeuce(false);
+
         partido.setCantidadGamesLocal(partido.getCantidadGamesLocal() + 1);
         if (partido.getCantidadGamesLocal() == 6) {
             partido.setSetsLocal(partido.getSetsLocal() + 1);
