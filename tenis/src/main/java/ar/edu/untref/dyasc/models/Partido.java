@@ -14,6 +14,8 @@ public class Partido {
     private boolean ganoVisitante;
 
     private boolean deuce;
+    private boolean ventajaLocal;
+    private boolean ventajaVisitante;
 
     public boolean isGanoLocal() {
         return ganoLocal;
@@ -42,6 +44,22 @@ public class Partido {
         this.cantidadGamesVisitante = 0;
         this.ganoLocal = false;
         this.ganoVisitante = false;
+    }
+
+    public boolean isVentajaLocal() {
+        return ventajaLocal;
+    }
+
+    public void setVentajaLocal(boolean ventajaLocal) {
+        this.ventajaLocal = ventajaLocal;
+    }
+
+    public boolean isVentajaVisitante() {
+        return ventajaVisitante;
+    }
+
+    public void setVentajaVisitante(boolean ventajaVisitante) {
+        this.ventajaVisitante = ventajaVisitante;
     }
 
     public boolean isDeuce() {

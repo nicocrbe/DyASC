@@ -50,7 +50,14 @@ public class PartidoService {
             }
             partido.setPuntosGameActualLocal("40");
         }else if(partido.getPuntosGameActualLocal().equals("40")){
-            partido.setPuntosGameActualLocal("0");
+            if(partido.isDeuce()){
+                partido.setVentajaLocal(true);
+                partido.setDeuce(false);
+            }else{
+                sumarGameLocal();
+                partido.setPuntosGameActualLocal("0");
+            }
+
         }
     }
 /*
