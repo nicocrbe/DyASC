@@ -231,4 +231,21 @@ public class PartidoServiceTest {
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
     }
+
+    @Test
+    public void testEstandoEnVentajaLocalQuitarVentaja(){
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualVisitante();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualLocal();
+        partidoService.sumarPuntoGameActualVisitante();
+
+        Assertions.assertFalse(partidoService.getPartido().isVentajaLocal());
+        Assertions.assertTrue(partidoService.getPartido().isDeuce());
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
+        Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
+    }
 }

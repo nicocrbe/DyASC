@@ -74,11 +74,14 @@ public class PartidoService {
             if (partido.isDeuce()) {
                 partido.setVentajaVisitante(true);
                 partido.setDeuce(false);
+            } else if(partido.isVentajaLocal()){
+                partido.setDeuce(true);
+                partido.setVentajaLocal(false);
             } else {
                 sumarGameVisitante();
                 partido.setPuntosGameActualVisitante("0");
             }
-    }
+        }
 
     }
 
