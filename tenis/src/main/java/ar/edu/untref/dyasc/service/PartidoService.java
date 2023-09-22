@@ -88,36 +88,46 @@ public class PartidoService {
     }
 
     public void sumarGameLocal() {
-        partido.setVentajaLocal(false);
-        partido.setPuntosGameActualLocal("0");
-        partido.setPuntosGameActualVisitante("0");
-        partido.setDeuce(false);
+        iniciarGame();
 
         partido.setCantidadGamesLocal(partido.getCantidadGamesLocal() + 1);
-        if (partido.getCantidadGamesLocal() >= 6 && (partido.getCantidadGamesLocal() - partido.getCantidadGamesVisitante()) >= 2) {
-            partido.setSetsLocal(partido.getSetsLocal() + 1);
-            partido.setCantidadGamesLocal(0);
-            partido.setCantidadGamesVisitante(0);
-        }
-        if(partido.getSetsLocal()==3){
-            partido.setGanoLocal(true);
-        }
+        validarYSumarSetLocal();
+        checkGanoLocal();
     }
 
     public void sumarGameVisitante() {
-        partido.setVentajaLocal(false);
-        partido.setPuntosGameActualLocal("0");
-        partido.setPuntosGameActualVisitante("0");
-        partido.setDeuce(false);
+        iniciarGame();
 
         partido.setCantidadGamesVisitante(partido.getCantidadGamesVisitante() + 1);
+        validarYSumarSetVisitante();
+        checkGanoVisitante();
+    }
+
+    private void validarYSumarSetVisitante() {
         if (partido.getCantidadGamesVisitante() >= 6 && (partido.getCantidadGamesVisitante() - partido.getCantidadGamesLocal()) >= 2) {
             partido.setSetsVisitante(partido.getSetsVisitante() + 1);
             partido.setCantidadGamesLocal(0);
             partido.setCantidadGamesVisitante(0);
         }
+    }
+
+    private void checkGanoVisitante() {
         if(partido.getSetsVisitante()==3){
             partido.setGanoVisitante(true);
+        }
+    }
+
+    private void validarYSumarSetLocal() {
+        if (partido.getCantidadGamesLocal() >= 6 && (partido.getCantidadGamesLocal() - partido.getCantidadGamesVisitante()) >= 2) {
+            partido.setSetsLocal(partido.getSetsLocal() + 1);
+            partido.setCantidadGamesLocal(0);
+            partido.setCantidadGamesVisitante(0);
+        }
+    }
+
+    private void checkGanoLocal() {
+        if(partido.getSetsLocal()==3){
+            partido.setGanoLocal(true);
         }
     }
 
@@ -131,4 +141,11 @@ public class PartidoService {
         }
     }
 
+    private void iniciarGame() {
+        partido.setVentajaLocal(false);
+        partido.setVentajaVisitante(false);
+        partido.setPuntosGameActualLocal("0");
+        partido.setPuntosGameActualVisitante("0");
+        partido.setDeuce(false);
+    }
 }

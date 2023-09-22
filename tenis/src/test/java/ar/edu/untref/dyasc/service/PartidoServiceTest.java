@@ -98,86 +98,42 @@ public class PartidoServiceTest {
 
     @Test
     public void testGanarSetLocal(){
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(6);
         Assertions.assertEquals(1, partidoService.getPartido().getSetsLocal());
     }
 
     @Test
     public void testGanarSetVisitante(){
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(6);
         Assertions.assertEquals(1, partidoService.getPartido().getSetsVisitante());
     }
 
     @Test
     public void testGanarPartidoLocal() {
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(6);
 
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(6);
 
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(6);
 
         Assertions.assertTrue(partidoService.getPartido().isGanoLocal());
     }
 
     @Test
     public void testGanarPartidoVisitante() {
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(6);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(6);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(6);
 
         Assertions.assertTrue(partidoService.getPartido().isGanoVisitante());
     }
 
     @Test
     public void testDeuceAlSumarPuntoVisitante() {
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
+        sumarNPuntosGameActualLocal(3);
+        sumarNPuntosGameActualVisitante(3);
 
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
@@ -186,12 +142,8 @@ public class PartidoServiceTest {
 
     @Test
     public void testDeuceAlSumarPuntoLocal() {
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
+        sumarNPuntosGameActualVisitante(3);
+        sumarNPuntosGameActualLocal(3);
 
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualLocal());
         Assertions.assertEquals("40", partidoService.getPartido().getPuntosGameActualVisitante());
@@ -200,12 +152,8 @@ public class PartidoServiceTest {
 
     @Test
     public void testDeuceVentajaLocal() {
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
+        sumarNPuntosGameActualVisitante(3);
+        sumarNPuntosGameActualLocal(3);
         partidoService.sumarPuntoGameActualLocal();
 
         Assertions.assertTrue(partidoService.getPartido().isVentajaLocal());
@@ -216,12 +164,8 @@ public class PartidoServiceTest {
 
     @Test
     public void testDeuceVentajaVisitante() {
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
+        sumarNPuntosGameActualLocal(3);
+        sumarNPuntosGameActualVisitante(3);
         partidoService.sumarPuntoGameActualVisitante();
 
         Assertions.assertTrue(partidoService.getPartido().isVentajaVisitante());
@@ -232,12 +176,8 @@ public class PartidoServiceTest {
 
     @Test
     public void testEstandoEnVentajaLocalQuitarVentaja(){
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
+        sumarNPuntosGameActualVisitante(3);
+        sumarNPuntosGameActualLocal(3);
         partidoService.sumarPuntoGameActualLocal();
         partidoService.sumarPuntoGameActualVisitante();
 
@@ -249,12 +189,8 @@ public class PartidoServiceTest {
 
     @Test
     public void testEstandoEnVentajaVisitanteQuitarVentaja(){
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
+        sumarNPuntosGameActualLocal(3);
+        sumarNPuntosGameActualVisitante(3);
         partidoService.sumarPuntoGameActualVisitante();
         partidoService.sumarPuntoGameActualLocal();
 
@@ -266,9 +202,7 @@ public class PartidoServiceTest {
 
     @Test
     public void testSetearValoresPorDefectoAlGanarGameLocal(){
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
-        partidoService.sumarPuntoGameActualLocal();
+        sumarNPuntosGameActualLocal(3);
         partidoService.sumarPuntoGameActualLocal();
 
         Assertions.assertEquals("0", partidoService.getPartido().getPuntosGameActualLocal());
@@ -282,10 +216,8 @@ public class PartidoServiceTest {
 
     @Test
     public void testSetearValoresPorDefectoAlGanarGameVisitante(){
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
-        partidoService.sumarPuntoGameActualVisitante();
+
+        sumarNPuntosGameActualVisitante(4);
 
         Assertions.assertEquals("0", partidoService.getPartido().getPuntosGameActualLocal());
         Assertions.assertEquals("0", partidoService.getPartido().getPuntosGameActualVisitante());
@@ -298,17 +230,9 @@ public class PartidoServiceTest {
 
     @Test
     public void testNoSumarSetEnTieBreakLocal(){
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(5);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(5);
 
         partidoService.sumarGameLocal();
 
@@ -317,17 +241,9 @@ public class PartidoServiceTest {
 
     @Test
     public void testNoSumarSetEnTieBreakVisitante(){
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(5);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(5);
 
         partidoService.sumarGameVisitante();
 
@@ -336,17 +252,9 @@ public class PartidoServiceTest {
 
     @Test
     public void testSumarSetEnTieBreakLocal() {
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(5);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(5);
 
         partidoService.sumarGameLocal();
         partidoService.sumarGameLocal();
@@ -356,17 +264,9 @@ public class PartidoServiceTest {
 
     @Test
     public void testSumarSetEnTieBreakVisitante() {
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(5);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(5);
 
         partidoService.sumarGameVisitante();
         partidoService.sumarGameVisitante();
@@ -376,53 +276,47 @@ public class PartidoServiceTest {
 
     @Test
     public void testObtenerJugadorLocalSiEsGanador() {
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(6);
 
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(6);
 
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
-        partidoService.sumarGameLocal();
+        sumarNGamesLocal(6);
 
         Assertions.assertEquals("Juan", partidoService.obtenerGanador().getNombre());
     }
 
     @Test
     public void testObtenerJugadorVisitanteSiEsGanador() {
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(6);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(6);
 
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
-        partidoService.sumarGameVisitante();
+        sumarNGamesVisitante(6);
 
         Assertions.assertEquals("Pedro", partidoService.obtenerGanador().getNombre());
+    }
+
+    private void sumarNGamesLocal(int n) {
+        for(int i = 0; i < n; i++){
+            partidoService.sumarGameLocal();
+        }
+    }
+
+    private void sumarNGamesVisitante(int n) {
+        for(int i = 0; i < n; i++){
+            partidoService.sumarGameVisitante();
+        }
+    }
+
+    private void sumarNPuntosGameActualVisitante(int n) {
+        for(int i = 0; i < n; i++){
+            partidoService.sumarPuntoGameActualVisitante();
+        }
+    }
+
+    private void sumarNPuntosGameActualLocal(int n) {
+        for(int i = 0; i < n; i++){
+            partidoService.sumarPuntoGameActualLocal();
+        }
     }
 }
