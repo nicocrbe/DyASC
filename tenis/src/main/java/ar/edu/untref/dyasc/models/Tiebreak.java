@@ -32,4 +32,8 @@ public class Tiebreak {
     public void sumarPuntoVisitanteTB() {
         puntosVisitanteTB++;
     }
+
+    public boolean checkGanadorLocalTB() {
+        return puntosLocalTB > puntosVisitanteTB && puntosLocalTB >= 7 && puntosLocalTB - puntosVisitanteTB >= 2;
+    }
 }
