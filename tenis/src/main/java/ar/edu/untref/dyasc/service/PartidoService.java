@@ -113,6 +113,8 @@ public class PartidoService {
 
         partido.setCantidadGamesVisitante(partido.getCantidadGamesVisitante() + 1);
         validarYSumarSetVisitante();
+        verificarTieBreak();
+
         checkGanoVisitante();
     }
 
