@@ -2,6 +2,7 @@ package ar.edu.untref.dyasc.service;
 
 import ar.edu.untref.dyasc.models.Jugador;
 import ar.edu.untref.dyasc.models.Partido;
+import ar.edu.untref.dyasc.models.Tiebreak;
 
 public class PartidoService {
 
@@ -9,10 +10,20 @@ public class PartidoService {
     private Jugador jugadorVisitante;
     private Partido partido;
 
+    private Tiebreak tiebreak;
+
     public PartidoService(Jugador jugadorLocal, Jugador jugadorVisitante, Partido partido) {
         this.jugadorLocal = jugadorLocal;
         this.jugadorVisitante = jugadorVisitante;
         this.partido = partido;
+    }
+
+    public Tiebreak getTiebreak() {
+        return tiebreak;
+    }
+
+    public void setTiebreak(Tiebreak tiebreak) {
+        this.tiebreak = tiebreak;
     }
 
     public Partido getPartido() {
@@ -92,6 +103,8 @@ public class PartidoService {
 
         partido.setCantidadGamesLocal(partido.getCantidadGamesLocal() + 1);
         validarYSumarSetLocal();
+        verificarTieBreak();
+
         checkGanoLocal();
     }
 
@@ -101,6 +114,12 @@ public class PartidoService {
         partido.setCantidadGamesVisitante(partido.getCantidadGamesVisitante() + 1);
         validarYSumarSetVisitante();
         checkGanoVisitante();
+    }
+
+    private void verificarTieBreak() {
+        if (partido.getCantidadGamesLocal() == 6 && partido.getCantidadGamesVisitante() == 6) {
+            this.tiebreak = new Tiebreak();
+        }
     }
 
     private void validarYSumarSetVisitante() {

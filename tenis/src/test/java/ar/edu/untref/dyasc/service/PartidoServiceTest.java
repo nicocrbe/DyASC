@@ -2,6 +2,7 @@ package ar.edu.untref.dyasc.service;
 
 import ar.edu.untref.dyasc.models.Jugador;
 import ar.edu.untref.dyasc.models.Partido;
+import ar.edu.untref.dyasc.models.Tiebreak;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -229,7 +230,7 @@ public class PartidoServiceTest {
     }
 
     @Test
-    public void testNoSumarSetEnTieBreakLocal(){
+    public void testNoSumarSiDiferenciaEsMenorADosLocal(){
         sumarNGamesLocal(5);
 
         sumarNGamesVisitante(5);
@@ -240,7 +241,7 @@ public class PartidoServiceTest {
     }
 
     @Test
-    public void testNoSumarSetEnTieBreakVisitante(){
+    public void testNoSumarSetSiDiferenciaEsMenorADosVisitante(){
         sumarNGamesLocal(5);
 
         sumarNGamesVisitante(5);
@@ -251,7 +252,7 @@ public class PartidoServiceTest {
     }
 
     @Test
-    public void testSumarSetEnTieBreakLocal() {
+    public void testSumarSetSiDiferenciaEsIgualADosLocal() {
         sumarNGamesLocal(5);
 
         sumarNGamesVisitante(5);
@@ -263,7 +264,7 @@ public class PartidoServiceTest {
     }
 
     @Test
-    public void testSumarSetEnTieBreakVisitante() {
+    public void testSumarSetSiDiferenciaEsIgualADosVisitante() {
         sumarNGamesLocal(5);
 
         sumarNGamesVisitante(5);
@@ -272,6 +273,22 @@ public class PartidoServiceTest {
         partidoService.sumarGameVisitante();
 
         Assertions.assertEquals(1, partidoService.getPartido().getSetsVisitante());
+    }
+
+    @Test
+    public void crearTieBreakLocal(){
+        sumarNGamesLocal(5);
+        sumarNGamesVisitante(5);
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameLocal();
+
+        Tiebreak tiebreak = partidoService.getTiebreak();
+        int puntosLocalTB = tiebreak.getPuntosLocalTB();
+        int puntosVisitanteTB = tiebreak.getPuntosVisitanteTB();
+
+        Assertions.assertEquals(0, puntosLocalTB);
+        Assertions.assertEquals(0, puntosVisitanteTB);
     }
 
     @Test
