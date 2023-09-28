@@ -24,4 +24,8 @@ public class Tiebreak {
     public void setPuntosVisitanteTB(int puntosVisitanteTB) {
         this.puntosVisitanteTB = puntosVisitanteTB;
     }
+
+    public void sumarPuntoLocalTB() {
+        puntosLocalTB++;
+    }
 }

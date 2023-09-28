@@ -308,6 +308,22 @@ public class PartidoServiceTest {
     }
 
     @Test
+    public void testSumarPuntoLocalTB(){
+        sumarNGamesLocal(5);
+        sumarNGamesVisitante(5);
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameLocal();
+
+        partidoService.getTiebreak().sumarPuntoLocalTB();
+
+        Tiebreak tiebreak = partidoService.getTiebreak();
+        int puntosLocalTB = tiebreak.getPuntosLocalTB();
+
+        Assertions.assertEquals(1, puntosLocalTB);
+    }
+
+    @Test
     public void testObtenerJugadorLocalSiEsGanador() {
         sumarNGamesLocal(6);
 
