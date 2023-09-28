@@ -315,7 +315,7 @@ public class PartidoServiceTest {
         partidoService.sumarGameVisitante();
         partidoService.sumarGameLocal();
 
-        partidoService.getTiebreak().sumarPuntoLocalTB();
+        partidoService.getTiebreak().sumarPuntoLocalTB(partidoService.getPartido());
 
         Tiebreak tiebreak = partidoService.getTiebreak();
         int puntosLocalTB = tiebreak.getPuntosLocalTB();
@@ -331,7 +331,7 @@ public class PartidoServiceTest {
         partidoService.sumarGameVisitante();
         partidoService.sumarGameLocal();
 
-        partidoService.getTiebreak().sumarPuntoVisitanteTB();
+        partidoService.getTiebreak().sumarPuntoVisitanteTB(partidoService.getPartido());
 
         Tiebreak tiebreak = partidoService.getTiebreak();
         int puntosVisitanteTB = tiebreak.getPuntosVisitanteTB();
@@ -340,7 +340,7 @@ public class PartidoServiceTest {
     }
 
     @Test
-    public void ganaLocalTiebreakSiTieneDiferenciaDeDosYLlegaAlMenosASietePuntos(){
+    public void ganaLocalSetPorTiebreakSiTieneDiferenciaDeDosYLlegaAlMenosASietePuntos(){
         sumarNGamesLocal(5);
         sumarNGamesVisitante(5);
 
@@ -352,12 +352,12 @@ public class PartidoServiceTest {
 
         sumarNPuntosTiebreakLocal(2);
 
-        Assertions.assertTrue(partidoService.getTiebreak().checkGanadorLocalTB());
+        Assertions.assertEquals(1, partidoService.getPartido().getSetsLocal());
 
     }
 
     @Test
-    public void ganaVisitanteTiebreakSiTieneDiferenciaDeDosYLlegaAlMenosASietePuntos(){
+    public void ganaVisitanteSetPorTiebreakSiTieneDiferenciaDeDosYLlegaAlMenosASietePuntos(){
         sumarNGamesLocal(5);
         sumarNGamesVisitante(5);
 
@@ -369,7 +369,7 @@ public class PartidoServiceTest {
 
         sumarNPuntosTiebreakVisitante(2);
 
-        Assertions.assertTrue(partidoService.getTiebreak().checkGanadorVisitanteTB());
+        Assertions.assertEquals(1,partidoService.getPartido().getSetsVisitante());
 
     }
 
@@ -421,13 +421,13 @@ public class PartidoServiceTest {
 
     private void sumarNPuntosTiebreakLocal(int n){
         for(int i = 0; i < n; i++){
-            partidoService.getTiebreak().sumarPuntoLocalTB();
+            partidoService.getTiebreak().sumarPuntoLocalTB(partidoService.getPartido());
         }
     }
 
     private void sumarNPuntosTiebreakVisitante(int n){
         for(int i = 0; i < n; i++){
-            partidoService.getTiebreak().sumarPuntoVisitanteTB();
+            partidoService.getTiebreak().sumarPuntoVisitanteTB(partidoService.getPartido());
         }
     }
 }
