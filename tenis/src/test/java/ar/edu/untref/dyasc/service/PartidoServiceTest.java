@@ -347,10 +347,10 @@ public class PartidoServiceTest {
         partidoService.sumarGameVisitante();
         partidoService.sumarGameLocal();
 
-        sumarNPuntosTiebreakLocal(6);
-        sumarNPuntosTiebreakVisitante(6);
+        sumarNGamesLocal(6);
+        sumarNGamesVisitante(6);
 
-        sumarNPuntosTiebreakLocal(2);
+        sumarNGamesLocal(2);
 
         Assertions.assertEquals(1, partidoService.getPartido().getSetsLocal());
 
@@ -364,15 +364,80 @@ public class PartidoServiceTest {
         partidoService.sumarGameVisitante();
         partidoService.sumarGameLocal();
 
-        sumarNPuntosTiebreakLocal(6);
-        sumarNPuntosTiebreakVisitante(6);
+        sumarNGamesLocal(6);
+        sumarNGamesVisitante(6);
 
-        sumarNPuntosTiebreakVisitante(2);
+        sumarNGamesVisitante(2);
 
         Assertions.assertEquals(1,partidoService.getPartido().getSetsVisitante());
 
     }
 
+    @Test
+    public void noSumarSetTiebreakSiDiferenciaEsMenorADosLocal(){
+        sumarNGamesLocal(5);
+        sumarNGamesVisitante(5);
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameLocal();
+
+        sumarNGamesLocal(6);
+        sumarNGamesVisitante(6);
+
+        sumarNGamesLocal(1);
+
+        Assertions.assertEquals(0, partidoService.getPartido().getSetsLocal());
+
+    }
+
+    @Test
+    public void noSumarSetTiebreakSiDiferenciaEsMenorADosVisitante(){
+        sumarNGamesLocal(5);
+        sumarNGamesVisitante(5);
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameLocal();
+
+        sumarNGamesLocal(6);
+        sumarNGamesVisitante(6);
+
+        sumarNGamesVisitante(1);
+
+        Assertions.assertEquals(0, partidoService.getPartido().getSetsVisitante());
+
+    }
+
+    @Test
+    public void noSumarSetTiebreakSiTieneMenosDeSietePuntosLocal(){
+        sumarNGamesLocal(5);
+        sumarNGamesVisitante(5);
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameLocal();
+
+        sumarNGamesLocal(4);
+        sumarNGamesVisitante(4);
+
+        sumarNGamesLocal(2);
+
+        Assertions.assertEquals(0, partidoService.getPartido().getSetsLocal());
+    }
+
+    @Test
+    public void noSumarSetTiebreakSiTieneMenosDeSietePuntosVisitante(){
+        sumarNGamesLocal(5);
+        sumarNGamesVisitante(5);
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameLocal();
+
+        sumarNGamesLocal(4);
+        sumarNGamesVisitante(4);
+
+        sumarNGamesVisitante(2);
+
+        Assertions.assertEquals(0, partidoService.getPartido().getSetsLocal());
+    }
     @Test
     public void testObtenerJugadorLocalSiEsGanador() {
         sumarNGamesLocal(6);
@@ -416,18 +481,6 @@ public class PartidoServiceTest {
     private void sumarNPuntosGameActualLocal(int n) {
         for(int i = 0; i < n; i++){
             partidoService.sumarPuntoGameActualLocal();
-        }
-    }
-
-    private void sumarNPuntosTiebreakLocal(int n){
-        for(int i = 0; i < n; i++){
-            partidoService.getTiebreak().sumarPuntoLocalTB(partidoService.getPartido());
-        }
-    }
-
-    private void sumarNPuntosTiebreakVisitante(int n){
-        for(int i = 0; i < n; i++){
-            partidoService.getTiebreak().sumarPuntoVisitanteTB(partidoService.getPartido());
         }
     }
 }

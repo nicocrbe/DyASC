@@ -4,6 +4,8 @@ import ar.edu.untref.dyasc.models.Jugador;
 import ar.edu.untref.dyasc.models.Partido;
 import ar.edu.untref.dyasc.models.Tiebreak;
 
+import java.util.Objects;
+
 public class PartidoService {
 
     private Jugador jugadorLocal;
@@ -101,21 +103,31 @@ public class PartidoService {
     public void sumarGameLocal() {
         iniciarGame();
 
+        if(Objects.nonNull(this.getTiebreak())){
+            this.getTiebreak().sumarPuntoLocalTB(partido);
+            return;
+        }
         partido.setCantidadGamesLocal(partido.getCantidadGamesLocal() + 1);
         validarYSumarSetLocal();
         verificarTieBreak();
 
         checkGanoLocal();
+        checkGanoVisitante();
     }
 
     public void sumarGameVisitante() {
         iniciarGame();
 
+        if(Objects.nonNull(this.getTiebreak())){
+            this.getTiebreak().sumarPuntoVisitanteTB(partido);
+            return;
+        }
         partido.setCantidadGamesVisitante(partido.getCantidadGamesVisitante() + 1);
         validarYSumarSetVisitante();
         verificarTieBreak();
 
         checkGanoVisitante();
+        checkGanoLocal();
     }
 
     private void verificarTieBreak() {
