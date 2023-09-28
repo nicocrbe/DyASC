@@ -28,4 +28,8 @@ public class Tiebreak {
     public void sumarPuntoLocalTB() {
         puntosLocalTB++;
     }
+
+    public void sumarPuntoVisitanteTB() {
+        puntosVisitanteTB++;
+    }
 }
