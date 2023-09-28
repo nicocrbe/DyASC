@@ -357,6 +357,23 @@ public class PartidoServiceTest {
     }
 
     @Test
+    public void ganaVisitanteTiebreakSiTieneDiferenciaDeDosYLlegaAlMenosASietePuntos(){
+        sumarNGamesLocal(5);
+        sumarNGamesVisitante(5);
+
+        partidoService.sumarGameVisitante();
+        partidoService.sumarGameLocal();
+
+        sumarNPuntosTiebreakLocal(6);
+        sumarNPuntosTiebreakVisitante(6);
+
+        sumarNPuntosTiebreakVisitante(2);
+
+        Assertions.assertTrue(partidoService.getTiebreak().checkGanadorVisitanteTB());
+
+    }
+
+    @Test
     public void testObtenerJugadorLocalSiEsGanador() {
         sumarNGamesLocal(6);
 

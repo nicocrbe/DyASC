@@ -36,4 +36,8 @@ public class Tiebreak {
     public boolean checkGanadorLocalTB() {
         return puntosLocalTB > puntosVisitanteTB && puntosLocalTB >= 7 && puntosLocalTB - puntosVisitanteTB >= 2;
     }
+
+    public boolean checkGanadorVisitanteTB() {
+        return puntosVisitanteTB > puntosLocalTB && puntosVisitanteTB >= 7 && puntosVisitanteTB - puntosLocalTB >= 2;
+    }
 }
