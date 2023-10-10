@@ -1,8 +1,8 @@
 import network
 import time
 from Services.OutputManager import desconexion_output
-from Config.RestConfig import ssid, password
-from Config.Constants import log_conexion_exitosa, log_error_conexion, log_desconexion
+from Configuration.RestConfig import ssid, password
+from Configuration.Constants import log_conexion_exitosa, log_error_conexion, log_desconexion
 
 def connect():
     global station

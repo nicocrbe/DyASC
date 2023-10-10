@@ -1,4 +1,4 @@
-from Config.PinConfig import led_build_fail, led_build_ok, led_conexion, led_desconexion, buzzer
+from Configuration.PinConfig import led_build_fail, led_build_ok, led_conexion, led_desconexion, buzzer
 import time
 
 def build_ok_output():

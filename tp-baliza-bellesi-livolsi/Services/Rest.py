@@ -1,6 +1,6 @@
 from Services.GithubStatus import get_status
-from Config.RestConfig import path
-from Config.Constants import log_solicitud_post_recibida, log_error_conexion
+from Configuration.RestConfig import path
+from Configuration.Constants import log_solicitud_post_recibida, log_error_conexion
 import socket
 
 def start_server():
