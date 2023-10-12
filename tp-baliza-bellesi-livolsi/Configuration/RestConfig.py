@@ -1,6 +1,6 @@
 ##WIFI
-ssid = "LIVOLSI"
-password = "01416876501"
+ssid = "motog_nico"
+password = "asd12345"
 
 ##REST
 path = '/estado'
