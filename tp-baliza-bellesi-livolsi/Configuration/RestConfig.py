@@ -1,6 +1,6 @@
 ##WIFI
-ssid = "RodrigoRed"
-password = "36872326"
+ssid = "LIVOLSI"
+password = "01416876501"
 
 ##REST
 path = '/estado'
