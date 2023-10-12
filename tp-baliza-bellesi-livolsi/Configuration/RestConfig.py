@@ -1,6 +1,6 @@
 ##WIFI
-ssid = "Fibertel WiFi676 2.4GHz"
-password = "0013491895"
+ssid = "RodrigoRed"
+password = "36872326"
 
 ##REST
 path = '/estado'
