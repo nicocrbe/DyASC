@@ -1,5 +1,4 @@
 import urequests
-import time
 from Configuration.Constants import log_build_exitoso, log_build_fallido, log_no_workflows, log_fallo_json, log_fallo_request_datos
 from Configuration.PinConfig import led_build_fail, led_build_ok
 from Services.OutputManager import build_fail_output, build_ok_output, buzzer_output, waiting_status
@@ -7,8 +6,8 @@ from Configuration.RestConfig import usuario, repositorio, user_agent
 from Secrets import token
 
 def get_status(tiempo):
-    ##waiting_status(tiempo)
-    time.sleep(45)
+    waiting_status(tiempo)
+    
     url = "https://api.github.com/repos/" + usuario + repositorio + "actions/runs?page=1&per_page=1"
     searchHeaders = {
         "User-Agent": user_agent,

@@ -13,7 +13,7 @@ def start_server():
         try:
             conn, addr = s.accept()
             request = conn.recv(1024)
-            
+            print(request)
             if 'POST ' + path  in str(request):
                 print(log_solicitud_post_recibida)
                 get_status(30)
