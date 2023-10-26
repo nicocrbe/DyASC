@@ -8,7 +8,7 @@ from Secrets import token
 def get_status(tiempo):
     waiting_status(tiempo)
     
-    url = "https://api.github.com/repos/" + usuario + repositorio + "actions/runs?page=1&per_page=1"
+    url = "https://api.github.com/repos/" + usuario + "/" + repositorio + "/" + "actions/runs?page=1&per_page=1"
     searchHeaders = {
         "User-Agent": user_agent,
         "Authorization": token
