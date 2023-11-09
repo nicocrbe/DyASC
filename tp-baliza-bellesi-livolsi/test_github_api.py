@@ -7,7 +7,7 @@ from Configuration.Constants import log_build_exitoso, log_build_fallido, log_no
 
 class TestGithubApi(TestCase):
 
-    def test_get_status_with_mock_response_Build_exitoso(self):
+    def test_get_status_con_mock_response_Build_exitoso(self):
         
         mock_response = MagicMock()
         mock_response.status_code = 200
@@ -33,7 +33,7 @@ class TestGithubApi(TestCase):
         # Check log_build_exitoso
         mock_print.assert_called_with(log_build_exitoso)
 
-    def test_get_status_with_mock_response_Build_fallido(self):
+    def test_get_status_con_mock_response_Build_fallido(self):
         
         mock_response = MagicMock()
         mock_response.status_code = 200
@@ -59,7 +59,7 @@ class TestGithubApi(TestCase):
         # Check log_build_fallido
         mock_print.assert_called_with(log_build_fallido)    
 
-    def test_get_status_with_mock_response_No_Workflows(self):
+    def test_get_status_con_mock_response_No_Workflows(self):
         
         mock_response = MagicMock()
         mock_response.status_code = 200
@@ -85,7 +85,7 @@ class TestGithubApi(TestCase):
         # Check log_no_workflows
         mock_print.assert_called_with(log_no_workflows) 
 
-    def test_get_status_with_mock_response_Fallo_JSON(self):
+    def test_get_status_con_mock_response_Fallo_JSON(self):
         
         mock_response = MagicMock()
         mock_response.status_code = 200
@@ -108,7 +108,7 @@ class TestGithubApi(TestCase):
         # Check log_fallo_json
         mock_print.assert_called_with(log_fallo_json) 
 
-    def test_get_status_with_mock_response_Fallo_Request(self):
+    def test_get_status_con_mock_response_Fallo_Request(self):
         
         mock_response = MagicMock()
         mock_response.status_code = 404

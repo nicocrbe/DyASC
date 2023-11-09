@@ -8,12 +8,10 @@ from Secrets import token
 def get_status(tiempo):
     waiting_status(tiempo)
     
-<<<<<<< HEAD
     url = "https://api.github.com/repos/" + usuario + repositorio + "actions/runs?page=1&per_page=1"
     #url = "https://api.github.com/repos/" + usuario + "/" + repositorio + "/" + "actions/runs?page=1&per_page=1"
-=======
-    url = "https://api.github.com/repos/" + usuario + "/" + repositorio + "/" + "actions/runs?page=1&per_page=1"
->>>>>>> 5d61f915483a4cb6a9ef5b924e73fd499a00ed4b
+
+   
     searchHeaders = {
         "User-Agent": user_agent,
         "Authorization": token
