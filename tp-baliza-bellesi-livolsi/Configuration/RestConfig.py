@@ -7,5 +7,5 @@ path = '/estado'
 
 ##GITHUB
 user_agent = "MicroPython"
-usuario = "nicocrbe/"
-repositorio = "dyasc-2023/"
+usuario = "nicocrbe"
+repositorio = "dyasc-2023"
