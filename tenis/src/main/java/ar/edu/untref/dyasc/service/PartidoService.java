@@ -6,7 +6,7 @@ import ar.edu.untref.dyasc.models.Tiebreak;
 
 import java.util.Objects;
 
-public cass PartidoService {
+public class PartidoService {
 
     private Jugador jugadorLocal;
     private Jugador jugadorVisitante;
